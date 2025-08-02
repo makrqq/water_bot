@@ -143,6 +143,7 @@ async def on_text(msg: Message):
 
 async def main():
     # Use DefaultBotProperties for aiogram >= 3.7
+    # ВАЖНО: убедитесь, что собрали новый образ после изменений кода
     bot = Bot(token=settings.bot_token, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     dp = Dispatcher()
 
