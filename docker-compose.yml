@@ -1,0 +1,16 @@
+services:
+  water-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: water-bot:latest
+    container_name: water-bot
+    restart: unless-stopped
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - TZ=${TZ:-Europe/Moscow}
+      - DAILY_GOAL_DEFAULT=${DAILY_GOAL_DEFAULT:-2000}
+    volumes:
+      - ./data:/app/data
+    # No ports published (long polling to Telegram)
+    # network_mode can be default; it won't conflict with Caddy, Sing-box, or Nightscout

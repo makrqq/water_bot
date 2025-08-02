@@ -1,0 +1,5 @@
+aiogram==3.13.1
+pydantic==2.8.2
+aiosqlite==0.20.0
+python-dateutil==2.9.0.post0
+pytz==2024.1
